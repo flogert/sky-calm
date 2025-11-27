@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cozy Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in-slow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s cubic-bezier(.4,0,.2,1) both;
+}
+.animate-fade-in-slow {
+  animation: fade-in-slow 1.2s cubic-bezier(.4,0,.2,1) both;
+}
+.animate-pulse-gentle {
+  animation: pulse-gentle 2.5s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, #e0f7fa 25%, #f0fdfa 50%, #e0f7fa 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Accessibility: Focus visible ring for keyboard users */
+:focus-visible {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile-friendly touch targets */
+button, a, input, select, textarea {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Cozy card shadow */
+.cozy-shadow {
+  box-shadow: 0 4px 24px 0 rgba(20, 184, 166, 0.08), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+}
+
+/* Cozy background blur */
+.cozy-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Cozy border */
+.cozy-border {
+  border: 1.5px solid #e0f7fa;
+}
+
+/* Cozy gradient backgrounds */
+.cozy-gradient-light {
+  background: linear-gradient(135deg, #e0f7fa 0%, #fce4ec 50%, #fffde7 100%);
+}
+.cozy-gradient-dark {
+  background: linear-gradient(135deg, #1e293b 0%, #134e4a 50%, #1e293b 100%);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .auto-dark {
+    background: linear-gradient(135deg, #1e293b 0%, #134e4a 50%, #1e293b 100%);
+    color: #e0f7fa;
+  }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background: #14b8a6;
+  color: #fff;
+  border-radius: 8px;
+}
+.skip-link:focus {
+  left: 1em;
+  top: 1em;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+
+
+
